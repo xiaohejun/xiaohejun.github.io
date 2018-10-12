@@ -120,18 +120,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Boostrap]]></title>
-    <url>%2F2017%2F08%2F13%2Fweb%E5%89%8D%E7%AB%AF%2FBoostrap%E5%93%8D%E5%BA%94%E5%BC%8F%E5%B8%83%E5%B1%80%2F</url>
-    <content type="text"><![CDATA[一.响应式布局—查看Demo1.响应式布局的设计原则- 移动优先 在设计的初期就要考虑页面如何在多终端显示 - 渐进增强 充分发挥硬件设备的最大功能 2.头部声明 栅格系统进行响应式开发,头部设置响应的viewport 1&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no&quot;&gt; 3.网页开发中的单位： px px是相对于屏幕分辨率，大小无法跟随屏幕的放大和缩小，所有浏览器都支持 em 1em=16px(但不完全是,每个浏览器不一样)，em会继承父级元素的字体大小，IE部分浏览器不支持em rem rem和em类似,rem会继承根元素的字体大小，html{font-size:62.5%}(稳定)]]></content>
-      <categories>
-        <category>web前端</category>
-      </categories>
-      <tags>
-        <tag>boostrap</tag>
-        <tag>响应式布局</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[网页制作的总结]]></title>
     <url>%2F2017%2F08%2F13%2Fweb%E5%89%8D%E7%AB%AF%2Fhtml%2Bcss%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%2F</url>
     <content type="text"><![CDATA[一. 盒子模型 在css中，width和height指的是内容区域的宽度和高度，增加内边距，边框和外边距不会影响内容区域的尺寸，但是会增加元素框的尺寸。 二.清除浮动，清除默认样式12345678910111213```` /*清除默认样式*/body&#123; margin: 0px; padding: 0px;&#125;/*清除浮动*/.clearfix &#123; zoom: 1; display: table;&#125;```` 三.使用float应该注意 float 属性定义元素在哪个方向浮动。以往这个属性总应用于图像，使文本围绕在图像周围，不过在 CSS 中，任何元素都可以浮动。浮动元素会生成一个块级框，而不论它本身是何种元素。如果浮动非替换元素，则要指定一个明确的宽度；否则，它们会尽可能地窄。注释：假如在一行之上只有极少的空间可供浮动元素，那么这个元素会跳至下一行，这个过程会持续到某一行拥有足够的空间为止。 注意，图片本身有高度和宽度。其他浮动元素会碰到它的边框停下。 这就是文字环绕图片的原理。 浮动会让元素塌陷。即被浮动元素的父元素不具有高度。例如一个父元素包含了浮动元素，它将塌陷具有零高度。你可以按以下方法处理： 在浮动元素后加个div设置clear: both; height:0,overflow:hidden 使用clearfix; 设置父元素浮动; 四.制作弹出层 需要的知识点： 定位：absolute,relative,fixed 事件：onload,onclick DOM操作：getElementById(),scrollHeight(),clientHeight(),createElement(),appendChild(),removeChild().静止定位：相对与当前状态的屏幕静止。]]></content>
@@ -141,6 +129,18 @@
       <tags>
         <tag>html</tag>
         <tag>css</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Boostrap]]></title>
+    <url>%2F2017%2F08%2F13%2Fweb%E5%89%8D%E7%AB%AF%2FBoostrap%E5%93%8D%E5%BA%94%E5%BC%8F%E5%B8%83%E5%B1%80%2F</url>
+    <content type="text"><![CDATA[一.响应式布局—查看Demo1.响应式布局的设计原则- 移动优先 在设计的初期就要考虑页面如何在多终端显示 - 渐进增强 充分发挥硬件设备的最大功能 2.头部声明 栅格系统进行响应式开发,头部设置响应的viewport 1&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no&quot;&gt; 3.网页开发中的单位： px px是相对于屏幕分辨率，大小无法跟随屏幕的放大和缩小，所有浏览器都支持 em 1em=16px(但不完全是,每个浏览器不一样)，em会继承父级元素的字体大小，IE部分浏览器不支持em rem rem和em类似,rem会继承根元素的字体大小，html{font-size:62.5%}(稳定)]]></content>
+      <categories>
+        <category>web前端</category>
+      </categories>
+      <tags>
+        <tag>boostrap</tag>
+        <tag>响应式布局</tag>
       </tags>
   </entry>
   <entry>
