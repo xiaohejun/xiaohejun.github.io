@@ -108,25 +108,25 @@
 
 
 
-  <meta name="description" content="一. 盒子模型 在css中，width和height指的是内容区域的宽度和高度，增加内边距，边框和外边距不会影响内容区域的尺寸，但是会增加元素框的尺寸。  二.清除浮动，清除默认样式12345678910111213```` /*清除默认样式*/body&amp;#123;    margin: 0px;    padding: 0px;&amp;#125;/*清除浮动*/.clearfix &amp;#123;">
-<meta name="keywords" content="html,css">
+  <meta name="description" content="Codeforces Round #524 (Div. 2) A. Petya and Origami题目大意:需要邀请n个人来参加派对.需要制作邀请卡.一张邀请卡需要2红, 5绿, 8蓝. 每个笔记本有k个某种颜色.求最少需要多少个笔记本. 题解答案显示是$$ \lceil 2n/k \rceil  + \lceil 5n/k \rceil + \lceil 8*n/k \rceil$$ 123">
+<meta name="keywords" content="ACM,算法,cfdiv2">
 <meta property="og:type" content="article">
-<meta property="og:title" content="网页制作的总结">
-<meta property="og:url" content="https://xiaohejun.github.io/2017/08/13/web前端/html+css学习笔记/index.html">
+<meta property="og:title" content="Codeforces Round 524(Div. 2)">
+<meta property="og:url" content="https://xiaohejun.github.io/2018/11/25/ACM题目/Codeforces Round 524(Div. 2)/index.html">
 <meta property="og:site_name" content="xiaohejun&#39;s blog">
-<meta property="og:description" content="一. 盒子模型 在css中，width和height指的是内容区域的宽度和高度，增加内边距，边框和外边距不会影响内容区域的尺寸，但是会增加元素框的尺寸。  二.清除浮动，清除默认样式12345678910111213```` /*清除默认样式*/body&amp;#123;    margin: 0px;    padding: 0px;&amp;#125;/*清除浮动*/.clearfix &amp;#123;">
+<meta property="og:description" content="Codeforces Round #524 (Div. 2) A. Petya and Origami题目大意:需要邀请n个人来参加派对.需要制作邀请卡.一张邀请卡需要2红, 5绿, 8蓝. 每个笔记本有k个某种颜色.求最少需要多少个笔记本. 题解答案显示是$$ \lceil 2n/k \rceil  + \lceil 5n/k \rceil + \lceil 8*n/k \rceil$$ 123">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-10-09T08:15:17.498Z">
+<meta property="og:updated_time" content="2018-11-24T02:26:07.905Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="网页制作的总结">
-<meta name="twitter:description" content="一. 盒子模型 在css中，width和height指的是内容区域的宽度和高度，增加内边距，边框和外边距不会影响内容区域的尺寸，但是会增加元素框的尺寸。  二.清除浮动，清除默认样式12345678910111213```` /*清除默认样式*/body&amp;#123;    margin: 0px;    padding: 0px;&amp;#125;/*清除浮动*/.clearfix &amp;#123;">
+<meta name="twitter:title" content="Codeforces Round 524(Div. 2)">
+<meta name="twitter:description" content="Codeforces Round #524 (Div. 2) A. Petya and Origami题目大意:需要邀请n个人来参加派对.需要制作邀请卡.一张邀请卡需要2红, 5绿, 8蓝. 每个笔记本有k个某种颜色.求最少需要多少个笔记本. 题解答案显示是$$ \lceil 2n/k \rceil  + \lceil 5n/k \rceil + \lceil 8*n/k \rceil$$ 123">
 
 
 
 
 
 
-  <link rel="canonical" href="https://xiaohejun.github.io/2017/08/13/web前端/html+css学习笔记/"/>
+  <link rel="canonical" href="https://xiaohejun.github.io/2018/11/25/ACM题目/Codeforces Round 524(Div. 2)/"/>
 
 
 
@@ -136,7 +136,7 @@
   };
 </script>
 
-  <title>网页制作的总结 | xiaohejun's blog</title>
+  <title>Codeforces Round 524(Div. 2) | xiaohejun's blog</title>
   
 
 
@@ -364,7 +364,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://xiaohejun.github.io/2017/08/13/web前端/html+css学习笔记/">
+    <link itemprop="mainEntityOfPage" href="https://xiaohejun.github.io/2018/11/25/ACM题目/Codeforces Round 524(Div. 2)/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="xiaohejun">
@@ -381,7 +381,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">网页制作的总结
+          <h1 class="post-title" itemprop="name headline">Codeforces Round 524(Div. 2)
               
             
           </h1>
@@ -406,24 +406,12 @@
                 
               
 
-              <time title="创建时间：2017-08-13 15:29:59" itemprop="dateCreated datePublished" datetime="2017-08-13T15:29:59Z">2017-08-13</time>
+              <time title="创建时间：2018-11-24 18:25:59 / 修改时间：02:26:07" itemprop="dateCreated datePublished" datetime="2018-11-24T18:25:59Z">2018-11-24</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-10-09 08:15:17" itemprop="dateModified" datetime="2018-10-09T08:15:17Z">2018-10-09</time>
               
             
           </span>
@@ -440,7 +428,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/web前端/" itemprop="url" rel="index"><span itemprop="name">web前端</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/ACM题目/" itemprop="url" rel="index"><span itemprop="name">ACM题目</span></a></span>
 
                 
                 
@@ -474,30 +462,25 @@
       
 
       
-        <h2 id="一-盒子模型"><a href="#一-盒子模型" class="headerlink" title="一. 盒子模型"></a>一. 盒子模型</h2><blockquote>
-<p>在css中，width和height指的是内容区域的宽度和高度，增加内边距，<br>边框和外边距不会影响内容区域的尺寸，但是会增加元素框的尺寸。</p>
+        <p><a href="https://codeforces.com/contest/1080" target="_blank" rel="noopener">Codeforces Round #524 (Div. 2)</a></p>
+<h1 id="A-Petya-and-Origami"><a href="#A-Petya-and-Origami" class="headerlink" title="A. Petya and Origami"></a>A. Petya and Origami</h1><h2 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意:"></a>题目大意:</h2><p>需要邀请n个人来参加派对.需要制作邀请卡.一张邀请卡需要2红, 5绿, 8蓝. 每个笔记本有k个某种颜色.求最少需要多少个笔记本.</p>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>答案显示是$$ \lceil 2<em>n/k \rceil  + \lceil 5</em>n/k \rceil + \lceil 8*n/k \rceil$$</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n,k;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="comment">//freopen("in.txt", "r", stdin);</span></span><br><span class="line">	ios::sync_with_stdio(<span class="number">0</span>); <span class="built_in">cin</span>.tie(<span class="number">0</span>);</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; k;</span><br><span class="line">    <span class="keyword">int</span> x = <span class="number">2</span>*n/k;</span><br><span class="line">    <span class="keyword">if</span>(x * k &lt; <span class="number">2</span>*n) ++x;</span><br><span class="line">    <span class="keyword">int</span> y = <span class="number">5</span>*n/k;</span><br><span class="line">    <span class="keyword">if</span>(y * k &lt; <span class="number">5</span>*n) ++y;</span><br><span class="line">    <span class="keyword">int</span> z = <span class="number">8</span>*n/k;</span><br><span class="line">    <span class="keyword">if</span>(z * k &lt; <span class="number">8</span>*n) ++z;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; x + y + z&lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="B-Margarite-and-the-best-present"><a href="#B-Margarite-and-the-best-present" class="headerlink" title="B. Margarite and the best present"></a>B. Margarite and the best present</h1><h2 id="题目大意-1"><a href="#题目大意-1" class="headerlink" title="题目大意:"></a>题目大意:</h2><p>有一个序列. $a_i = i*(-1)^i$. 给定l, r. 求$\sum_{i = l} ^ ra_i$.</p>
+<h2 id="题解-1"><a href="#题解-1" class="headerlink" title="题解"></a>题解</h2><p>将这个序列看成两个等差序列.利用等差序列求和公式即可.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> q;</span><br><span class="line"><span class="keyword">int</span> l,r;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="comment">//freopen("in.txt", "r", stdin);</span></span><br><span class="line">	ios::sync_with_stdio(<span class="number">0</span>); <span class="built_in">cin</span>.tie(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">cin</span> &gt;&gt; q)&#123;</span><br><span class="line">        <span class="keyword">while</span>(q--)&#123;</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; l &gt;&gt; r;</span><br><span class="line">            <span class="keyword">int</span> len = r - l + <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">int</span> x = len/<span class="number">2</span>, y = len - x;</span><br><span class="line">            <span class="keyword">int</span> ans = <span class="number">0</span>, ans1, ans2;</span><br><span class="line">            ans1 = (x-y)*(l+r)/<span class="number">2</span>;</span><br><span class="line">            ans2 = (-y*(l+r<span class="number">-1</span>) + x*(l+r+<span class="number">1</span>))/<span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span>(l&amp;<span class="number">1</span>)&#123;</span><br><span class="line">                <span class="keyword">if</span>(r&amp;<span class="number">1</span>)&#123;</span><br><span class="line">                    ans = ans1;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    ans = ans2;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">if</span>(r&amp;<span class="number">1</span>)&#123;</span><br><span class="line">                    ans = -ans2;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    ans = -ans1;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="C-Masha-and-two-friends"><a href="#C-Masha-and-two-friends" class="headerlink" title="C. Masha and two friends"></a>C. Masha and two friends</h1><h2 id="题目大意-2"><a href="#题目大意-2" class="headerlink" title="题目大意:"></a>题目大意:</h2><blockquote>
+<p>AC</p>
 </blockquote>
-<h2 id="二-清除浮动，清除默认样式"><a href="#二-清除浮动，清除默认样式" class="headerlink" title="二.清除浮动，清除默认样式"></a>二.清除浮动，清除默认样式</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">````</span><br><span class="line"> /*清除默认样式*/</span><br><span class="line">body&#123;</span><br><span class="line">    margin: 0px;</span><br><span class="line">    padding: 0px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/*清除浮动*/</span><br><span class="line">.clearfix &#123;</span><br><span class="line">    zoom: 1;</span><br><span class="line">    display: table;</span><br><span class="line">&#125;</span><br><span class="line">````</span><br></pre></td></tr></table></figure>
-<h2 id="三-使用float应该注意"><a href="#三-使用float应该注意" class="headerlink" title="三.使用float应该注意"></a>三.使用float应该注意</h2><blockquote>
-<p><strong>float</strong> 属性定义元素在哪个方向浮动。以往这个属性总应用于图像，使文本围绕在图像周围，不过在 CSS 中，任何元素都可以浮动。浮动元素会生成一个块级框，而不论它本身是何种元素。<br>如果浮动非替换元素，则要指定一个明确的宽度；否则，它们会尽可能地窄。<br>注释：假如在一行之上只有极少的空间可供浮动元素，那么这个元素会跳至下一行，这个过程会持续到某一行拥有足够的空间为止。</p>
-</blockquote>
-<ul>
-<li style="list-style: none"><input type="checkbox" checked> 注意，图片本身有高度和宽度。其他浮动元素会碰到它的边框停下。 这就是文字环绕图片的原理。</li>
-<li style="list-style: none"><input type="checkbox" checked> 浮动会让元素塌陷。即被浮动元素的父元素不具有高度。例如一个父元素包含了浮动元素，它将塌陷具有零高度。你可以按以下方法处理：</li>
-</ul>
+<p>一开始有一个棋盘有黑白两种颜色。一开始将区域一(x1 y1) (x2 x2)这个区域(左下角和右下角的点构成一个矩形区域)全部涂成白色。然后将区域二(x3 y3) (x4 y4)这个区域全部涂成黑色.求最后棋盘上黑白的格子各有多少.</p>
+<h2 id="题解-2"><a href="#题解-2" class="headerlink" title="题解"></a>题解</h2><p>计算区域一(x1 y1) (x2 y2)区域中一开始有白色格子w1 黑色格子b1<br>计算区域二(x3 y3) (x4 y4)区域中一开始有白色格子w3 黑色格子b3<br>计算上面两个区域相交的区域三(x5 y5) (x6 x6)区域中一开始有白色格子w2 黑色格子b2</p>
+<p>一开始棋盘上有orw个白格子.orb个黑格子.</p>
 <ol>
-<li>在浮动元素后加个div设置clear: both; height:0,overflow:hidden</li>
-<li>使用clearfix;</li>
-<li>设置父元素浮动;</li>
+<li>区域一涂成白色. orw += b1, orb -= b1</li>
+<li>区域二和区域一二相交的地方区域三涂成黑色<br> 2.1 获得区域二的白色 orb += w3, orw -= w3<br> 2.2 获得相交部分的黑色 orb += b2, orw -= b2</li>
 </ol>
-<h2 id="四-制作弹出层"><a href="#四-制作弹出层" class="headerlink" title="四.制作弹出层"></a>四.制作弹出层</h2><blockquote>
-<p>需要的知识点：</p>
-<ul>
-<li style="list-style: none"><input type="checkbox" checked> 定位：absolute,relative,fixed</li>
-<li style="list-style: none"><input type="checkbox" checked> 事件：onload,onclick</li>
-<li style="list-style: none"><input type="checkbox" checked> DOM操作：getElementById(),scrollHeight(),clientHeight(),createElement(),appendChild(),removeChild().<br>静止定位：相对与当前状态的屏幕静止。</li>
-</ul>
-</blockquote>
+<p>在orb基础上增加的黑格子的数量是w3 + b2 - b1<br>对应的.在orw基础上减少的白格子的数量是-(w3 + b2 - b1)</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL;</span><br><span class="line">LL n,m;</span><br><span class="line">LL bans, wans;</span><br><span class="line">LL x_1,y_1,x_2,y_2,x_3,y_3,x_4,y_4,x_5,y_5,x_6,y_6;</span><br><span class="line">LL b_1,b_2,b_3,w_1,w_2,w_3,orw,orb;</span><br><span class="line"><span class="keyword">int</span> t;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 统计区间x1,y1,x2,y2之间黑白的个数</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">tot</span><span class="params">(LL x_1, LL y_1, LL x_2, LL y_2, LL &amp;w, LL &amp;b)</span></span>&#123;</span><br><span class="line">    LL x = x_2-x_1+<span class="number">1</span>;</span><br><span class="line">    LL y = y_2-y_1+<span class="number">1</span>;</span><br><span class="line">    LL l = (x*y)/<span class="number">2</span>;</span><br><span class="line">    w = l; b = l;</span><br><span class="line">    <span class="keyword">if</span>(x&amp;<span class="number">1</span> &amp;&amp; y&amp;<span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span>((x_1+y_1)&amp;<span class="number">1</span>) &#123; <span class="comment">// b色</span></span><br><span class="line">            ++b;</span><br><span class="line">        &#125; <span class="keyword">else</span> ++w;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="comment">//freopen("in.txt", "r", stdin);</span></span><br><span class="line">	ios::sync_with_stdio(<span class="number">0</span>); <span class="built_in">cin</span>.tie(<span class="number">0</span>);</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; t;</span><br><span class="line">    <span class="keyword">while</span>(t--)&#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; x_1 &gt;&gt; y_1 &gt;&gt; x_2 &gt;&gt; y_2 &gt;&gt; x_3 &gt;&gt; y_3 &gt;&gt; x_4 &gt;&gt; y_4;</span><br><span class="line">        x_5 = max(x_1, x_3);</span><br><span class="line">        y_5 = max(y_1, y_3);</span><br><span class="line">        x_6 = min(x_2, x_4);</span><br><span class="line">        y_6 = min(y_2, y_4);</span><br><span class="line">        tot(x_1, y_1, x_2, y_2, w_1, b_1);</span><br><span class="line">        tot(x_3, y_3, x_4, y_4, w_3, b_3);</span><br><span class="line">        w_2 = b_2 = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span>(x_6 &gt;= x_5 &amp;&amp; y_6 &gt;= y_5) tot(x_5, y_5, x_6, y_6, w_2, b_2);</span><br><span class="line">        <span class="comment">//cout &lt;&lt; "w_1=" &lt;&lt; w_1 &lt;&lt; " " &lt;&lt; b_1 &lt;&lt; endl;</span></span><br><span class="line">       <span class="comment">// cout &lt;&lt; "w_2=" &lt;&lt; w_2 &lt;&lt; " " &lt;&lt; b_2 &lt;&lt; endl;</span></span><br><span class="line">        <span class="comment">//cout &lt;&lt; "w_3=" &lt;&lt; w_3 &lt;&lt; " " &lt;&lt; b_3 &lt;&lt; endl;</span></span><br><span class="line">        orb = n*m/<span class="number">2</span>; orw = n*m - orb;</span><br><span class="line">       <span class="comment">// cout &lt;&lt; orw &lt;&lt; " " &lt;&lt; orb &lt;&lt; endl;</span></span><br><span class="line">        orb += (w_3 - b_1 + b_2);</span><br><span class="line">        orw += (b_1 - w_3 - b_2);</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; orw &lt;&lt; <span class="string">" "</span> &lt;&lt; orb &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -542,9 +525,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/html/" rel="tag"># html</a>
+            <a href="/tags/ACM/" rel="tag"># ACM</a>
           
-            <a href="/tags/css/" rel="tag"># css</a>
+            <a href="/tags/算法/" rel="tag"># 算法</a>
+          
+            <a href="/tags/cfdiv2/" rel="tag"># cfdiv2</a>
           
         </div>
       
@@ -557,8 +542,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/08/13/web前端/Boostrap响应式布局/" rel="next" title="Boostrap">
-                <i class="fa fa-chevron-left"></i> Boostrap
+              <a href="/2018/11/04/ACM题目/河北工业大学ACM集训队日常训练day1030/" rel="next" title="河北工业大学ACM集训队日常训练day1030">
+                <i class="fa fa-chevron-left"></i> 河北工业大学ACM集训队日常训练day1030
               </a>
             
           </div>
@@ -566,10 +551,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/08/17/ssh2/SSH2框架整合--实现登录/" rel="prev" title="SSH2框架整合--实现登录">
-                SSH2框架整合--实现登录 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -751,7 +732,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一-盒子模型"><span class="nav-number">1.</span> <span class="nav-text">一. 盒子模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二-清除浮动，清除默认样式"><span class="nav-number">2.</span> <span class="nav-text">二.清除浮动，清除默认样式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三-使用float应该注意"><span class="nav-number">3.</span> <span class="nav-text">三.使用float应该注意</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四-制作弹出层"><span class="nav-number">4.</span> <span class="nav-text">四.制作弹出层</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#A-Petya-and-Origami"><span class="nav-number">1.</span> <span class="nav-text">A. Petya and Origami</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目大意"><span class="nav-number">1.1.</span> <span class="nav-text">题目大意:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题解"><span class="nav-number">1.2.</span> <span class="nav-text">题解</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#B-Margarite-and-the-best-present"><span class="nav-number">2.</span> <span class="nav-text">B. Margarite and the best present</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目大意-1"><span class="nav-number">2.1.</span> <span class="nav-text">题目大意:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题解-1"><span class="nav-number">2.2.</span> <span class="nav-text">题解</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#C-Masha-and-two-friends"><span class="nav-number">3.</span> <span class="nav-text">C. Masha and two friends</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目大意-2"><span class="nav-number">3.1.</span> <span class="nav-text">题目大意:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题解-2"><span class="nav-number">3.2.</span> <span class="nav-text">题解</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1266,6 +1247,30 @@
   
   
 
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      TeX: {equationNumbers: { autoNumber: "AMS" }}
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
   
 
 
