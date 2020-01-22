@@ -460,6 +460,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/10/19/ACM题目/题解(codeforces)/Codeforces-Round-#569-(Div--2)-B--Nick-and-Array(贪心)/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/10/19/ACM题目/题解(codeforces)/Codeforces-Round-#569-(Div--2)-B--Nick-and-Array(贪心)/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -544,8 +554,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/10/13/ACM题目/题解(牛客网)/Wannafly挑战赛26/" rel="next" title="Wannafly挑战赛26">
-                <i class="fa fa-chevron-left"></i> Wannafly挑战赛26
+              <a href="/2018/10/19/算法竞赛进阶指南/97.约数之和/" rel="next" title="约数之和">
+                <i class="fa fa-chevron-left"></i> 约数之和
               </a>
             
           </div>
@@ -554,8 +564,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/10/19/ACM题目/题解(codeforces)/Codeforces-Round-#569-(Div--2)-C--Valeriy-and-Deque(双端队列+循环节)/" rel="prev" title="Codeforces-Round-#569-(Div--2)-C--Valeriy-and-Deque(双端队列+循环节)">
-                Codeforces-Round-#569-(Div--2)-C--Valeriy-and-Deque(双端队列+循环节) <i class="fa fa-chevron-right"></i>
+              <a href="/2018/10/27/ACM题目/题解(牛客网)/Wannafly挑战赛27/" rel="prev" title="Wannafly挑战赛27">
+                Wannafly挑战赛27 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -578,6 +588,9 @@
           </div>
           
 
+  
+    <div class="comments" id="comments">
+    </div>
   
 
 
@@ -947,6 +960,31 @@
 
 
 
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+  
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: '1xG8Gtx6gp5DYAxiFFlYUAjX-gzGzoHsz',
+        appKey: 'pp80RNFpAeOVLsUuy8FUqSsm',
+        placeholder: 'xiaohejun邀请您输入您的留言',
+        avatar:'mm',
+        meta:guest,
+        pageSize:'10' || 10,
+        visitor: false
+    });
+  </script>
 
 
 

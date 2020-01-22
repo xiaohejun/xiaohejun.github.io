@@ -460,6 +460,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/03/25/ACM题目/题解(力扣)/1125--Smallest-Sufficient-Team/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/03/25/ACM题目/题解(力扣)/1125--Smallest-Sufficient-Team/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -551,8 +561,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/17/demo/骰子作画/" rel="next" title="骰子作画">
-                <i class="fa fa-chevron-left"></i> 骰子作画
+              <a href="/2018/03/25/ACM题目/题解(XCPC)/2019中国大学生程序设计竞赛（CCPC）---网络选拔赛-1004-path/" rel="next" title="2019中国大学生程序设计竞赛（CCPC）---网络选拔赛-1004-path">
+                <i class="fa fa-chevron-left"></i> 2019中国大学生程序设计竞赛（CCPC）---网络选拔赛-1004-path
               </a>
             
           </div>
@@ -585,6 +595,9 @@
           </div>
           
 
+  
+    <div class="comments" id="comments">
+    </div>
   
 
 
@@ -954,6 +967,31 @@
 
 
 
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+  
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: '1xG8Gtx6gp5DYAxiFFlYUAjX-gzGzoHsz',
+        appKey: 'pp80RNFpAeOVLsUuy8FUqSsm',
+        placeholder: 'xiaohejun邀请您输入您的留言',
+        avatar:'mm',
+        meta:guest,
+        pageSize:'10' || 10,
+        visitor: false
+    });
+  </script>
 
 
 
