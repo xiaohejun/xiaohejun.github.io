@@ -35,15 +35,78 @@
     </url>
 
     <url>
-        <loc>https://xiaohejun.github.io/categories/%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B%E5%85%A5%E9%97%A8%E7%BB%8F%E5%85%B8%E8%AE%AD%E7%BB%83%E6%8C%87%E5%8D%97/</loc>
-        <lastmod>2018-10-12T13:32:08.744Z</lastmod>
+        <loc>https://xiaohejun.github.io/categories/%E9%A2%98%E8%A7%A3-%E8%AE%A1%E8%92%9C%E5%AE%A2/</loc>
+        <lastmod>2020-01-22T05:53:03.297Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://xiaohejun.github.io/categories/ACM%E9%A2%98%E7%9B%AE/</loc>
-        <lastmod>2018-12-04T13:21:17.089Z</lastmod>
+        <loc>https://xiaohejun.github.io/categories/%E9%A2%98%E8%A7%A3-XCPC/</loc>
+        <lastmod>2020-01-22T06:18:25.653Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://xiaohejun.github.io/categories/%E9%A2%98%E8%A7%A3-hebut%E6%A0%A1%E5%86%85/</loc>
+        <lastmod>2020-01-22T06:20:21.876Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://xiaohejun.github.io/categories/%E9%A2%98%E8%A7%A3-codeforces/</loc>
+        <lastmod>2020-01-22T06:26:28.847Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://xiaohejun.github.io/categories/%E9%A2%98%E8%A7%A3-atcoder/</loc>
+        <lastmod>2020-01-22T06:27:03.930Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://xiaohejun.github.io/categories/%E9%9A%8F%E7%AC%94/</loc>
+        <lastmod>2020-01-22T06:27:18.163Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://xiaohejun.github.io/categories/%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B%E8%BF%9B%E9%98%B6%E6%8C%87%E5%8D%97/</loc>
+        <lastmod>2020-01-22T06:27:31.443Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://xiaohejun.github.io/categories/%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B%E5%85%A5%E9%97%A8%E7%BB%8F%E5%85%B8%E8%AE%AD%E7%BB%83%E6%8C%87%E5%8D%97/</loc>
+        <lastmod>2020-01-22T06:27:49.144Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://xiaohejun.github.io/categories/%E9%A2%98%E8%A7%A3-%E5%8A%9B%E6%89%A3/</loc>
+        <lastmod>2020-01-22T06:28:02.780Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://xiaohejun.github.io/categories/%E9%A2%98%E8%A7%A3-%E7%89%9B%E5%AE%A2%E7%BD%91/</loc>
+        <lastmod>2020-01-22T06:34:47.596Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://xiaohejun.github.io/categories/%E9%A2%98%E8%A7%A3-%E6%9C%AA%E5%88%86%E7%B1%BB/</loc>
+        <lastmod>2020-01-22T06:35:37.570Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

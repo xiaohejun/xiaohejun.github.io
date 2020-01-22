@@ -1,0 +1,1406 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.4.1" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.1" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '6.4.1',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="题目传送门 Problem DescriptionM斐波那契数列F[n]是一种整数数列，它的定义如下： F[0] = aF1 = bF[n] = F[n-1] * F[n-2] ( n &amp;gt; 1 ) 现在给出a, b, n，你能求出F[n]的值吗？  Input输入包含多组测试数据；每组数据占一行，包含3个整数a, b, n（ 0 &amp;lt;= a, b, n &amp;lt;= 10^9 ）  Ou">
+<meta name="keywords" content="矩阵快速幂">
+<meta property="og:type" content="article">
+<meta property="og:title" content="M斐波那契数列">
+<meta property="og:url" content="https://xiaohejun.github.io/2018/03/25/ACM题目/题解(未分类)/M斐波那契数列/index.html">
+<meta property="og:site_name" content="xiaohejun&#39;s blog">
+<meta property="og:description" content="题目传送门 Problem DescriptionM斐波那契数列F[n]是一种整数数列，它的定义如下： F[0] = aF1 = bF[n] = F[n-1] * F[n-2] ( n &amp;gt; 1 ) 现在给出a, b, n，你能求出F[n]的值吗？  Input输入包含多组测试数据；每组数据占一行，包含3个整数a, b, n（ 0 &amp;lt;= a, b, n &amp;lt;= 10^9 ）  Ou">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-01-22T05:58:44.003Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="M斐波那契数列">
+<meta name="twitter:description" content="题目传送门 Problem DescriptionM斐波那契数列F[n]是一种整数数列，它的定义如下： F[0] = aF1 = bF[n] = F[n-1] * F[n-2] ( n &amp;gt; 1 ) 现在给出a, b, n，你能求出F[n]的值吗？  Input输入包含多组测试数据；每组数据占一行，包含3个整数a, b, n（ 0 &amp;lt;= a, b, n &amp;lt;= 10^9 ）  Ou">
+
+
+
+
+
+
+  <link rel="canonical" href="https://xiaohejun.github.io/2018/03/25/ACM题目/题解(未分类)/M斐波那契数列/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>M斐波那契数列 | xiaohejun's blog</title>
+  
+
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?1b52fc78c2645da3c16b193b3e3ae3af";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">xiaohejun's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">good good study.day day up!</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-schedule">
+    <a href="/schedule/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />日程表</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-sitemap">
+    <a href="/sitemap.xml" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />站点地图</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-commonweal">
+    <a href="/404/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />公益 404</a>
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xiaohejun.github.io/2018/03/25/ACM题目/题解(未分类)/M斐波那契数列/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xiaohejun">
+      <meta itemprop="description" content="go go go!!!">
+      <meta itemprop="image" content="/images/22583599865.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xiaohejun's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">M斐波那契数列
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-03-24 20:11:59" itemprop="dateCreated datePublished" datetime="2018-03-24T20:11:59Z">2018-03-24</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2020-01-22 05:58:44" itemprop="dateModified" datetime="2020-01-22T05:58:44Z">2020-01-22</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/题解-未分类/" itemprop="url" rel="index"><span itemprop="name">题解(未分类)</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <hr>
+<p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=4549" target="_blank" rel="noopener">题目传送门</a></p>
+<h2 id="Problem-Description"><a href="#Problem-Description" class="headerlink" title="Problem Description"></a>Problem Description</h2><p>M斐波那契数列F[n]是一种整数数列，它的定义如下：</p>
+<p>F[0] = a<br>F<a href="http://acm.hdu.edu.cn/showproblem.php?pid=4549" target="_blank" rel="noopener">1</a> = b<br>F[n] = F[n-1] * F[n-2] ( n &gt; 1 )</p>
+<p>现在给出a, b, n，你能求出F[n]的值吗？</p>
+<hr>
+<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><p>输入包含多组测试数据；<br>每组数据占一行，包含3个整数a, b, n（ 0 &lt;= a, b, n &lt;= 10^9 ）</p>
+<hr>
+<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><p>对每组测试数据请输出一个整数F[n]，由于F[n]可能很大，你只需输出F[n]对1000000007取模后的值即可，每组数据输出一行。</p>
+<hr>
+<h2 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h2><p>0 1 0<br>6 10 2</p>
+<hr>
+<h2 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h2><p>0<br>60</p>
+<hr>
+<h1 id="题目解决"><a href="#题目解决" class="headerlink" title="题目解决"></a>题目解决</h1><h2 id="题目分析"><a href="#题目分析" class="headerlink" title="题目分析:"></a>题目分析:</h2><ol>
+<li>注意到n的范围最大到10^9,所以简单的进行递推时间和空间上都无法处理到限制范围内.</li>
+<li>这道题涉及到取余运算,所以我们应该知道取余运算的其中一个性质:$$(a<em>b) \mod p = ((a \mod p)</em> (b \mod p)) \mod p$$ </li>
+<li>注意到该递推式和斐波那契数列有相似之处.</li>
+</ol>
+<hr>
+<h2 id="知识点"><a href="#知识点" class="headerlink" title="知识点:"></a>知识点:</h2><h3 id="1-斐波那契数列的矩阵运算"><a href="#1-斐波那契数列的矩阵运算" class="headerlink" title="1.斐波那契数列的矩阵运算"></a>1.斐波那契数列的矩阵运算</h3><h4 id="1-斐波那契数列"><a href="#1-斐波那契数列" class="headerlink" title="1.斐波那契数列"></a>1.斐波那契数列</h4><p>$fib(0) = 0$<br>$fib(1) = 1$<br>$fib(n) = fib(n-1)+fib(n-2)$<br>| n | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | … | … | n-1 | n |<br>| —–:  | —–:  | :—-:  | :—-:  | :—-:  | :—-:  | :—-:  | :—-:  | :—-:  | :—-:  | :—-:  | :—-:  | :—-:  | :—-:  | :—-:  | :—-:  | :—-:  | :—-:  | :—-:  | :—-:  |<br>| fib(n) | 0 | 1 | 1 | 2 | 3 | 5 | 8 | 13 | 21 | 34 | 55 | 89 | 144 | 233 | 377 | … | … | fib(n-1) | fib(n) |</p>
+<h4 id="2-将斐波那契数列写到矩阵中"><a href="#2-将斐波那契数列写到矩阵中" class="headerlink" title="2.将斐波那契数列写到矩阵中"></a>2.将斐波那契数列写到矩阵中</h4><h5 id="1-考虑按照以下表达式构造n个矩阵"><a href="#1-考虑按照以下表达式构造n个矩阵" class="headerlink" title="1.考虑按照以下表达式构造n个矩阵:"></a>1.考虑按照以下表达式构造n个矩阵:</h5><p>$$<br> A_{n} = \begin{bmatrix}<br>   fib(n) &amp; fib(n+1) \<br>   fib(n+1) &amp; fib(n+2) \<br>  \end{bmatrix}<br>$$</p>
+<h5 id="2-得到如下矩阵"><a href="#2-得到如下矩阵" class="headerlink" title="2.得到如下矩阵"></a>2.得到如下矩阵</h5><p>$A_{0} = \begin{bmatrix}0 &amp; 1 \1 &amp; 1 \ \end{bmatrix} $ &nbsp; $A_{1} = \begin{bmatrix}1 &amp; 1 \1 &amp; 2 \ \end{bmatrix} $ &nbsp; $ A_{2} = \begin{bmatrix}1 &amp; 2 \2 &amp; 3 \ \end{bmatrix} $ &nbsp; $A_{3} = \begin{bmatrix}2 &amp; 3 \3 &amp; 5 \ \end{bmatrix} $ &nbsp; $A_{4} = \begin{bmatrix}3 &amp; 5 \5 &amp; 8 \ \end{bmatrix} $ … &nbsp; … &nbsp; … </p>
+<p>$A_{n} = \begin{bmatrix}fib(n) &amp; fib(n+1) \ fib(n+1) &amp; fib(n+2) \ \end{bmatrix} $</p>
+<h5 id="3-矩阵乘法运算"><a href="#3-矩阵乘法运算" class="headerlink" title="3.矩阵乘法运算"></a>3.矩阵乘法运算</h5><p>$A_{1} = \begin{bmatrix}1 &amp; 1 \1 &amp; 2 \ \end{bmatrix} = A_{0}A_{0}$ &nbsp;&nbsp;&nbsp; $ A_{2} = \begin{bmatrix}1 &amp; 2 \2 &amp; 3 \ \end{bmatrix} = A_{0}A_{0}A_{0}$ &nbsp;&nbsp; $A_{3} = \begin{bmatrix}2 &amp; 3 \3 &amp; 5 \ \end{bmatrix} = A_{0}A_{0}A_{0}A_{0} $ </p>
+<p>$ A_{4} = \begin{bmatrix}3 &amp; 5 \5 &amp; 8 \ \end{bmatrix} = A_{0}A_{0}A_{0}A_{0}A_{0}$ &nbsp;&nbsp; $A_{n} = \begin{bmatrix}fib(n) &amp; fib(n+1) \fib(n+1) &amp; fib(n+2) \ \end{bmatrix} = A_{0} ^ {n+1}$ </p>
+<p>\begin{array}{|rrrrrrrr|}<br>\hline<br>\color{red}{综上所述,要想求解f(n),求得A(n)或者A(n-2)即可} &amp;<br>\hline<br>\end{array}</p>
+<hr>
+<h3 id="2-快速幂"><a href="#2-快速幂" class="headerlink" title="2.快速幂:"></a>2.快速幂:</h3><p>Q:&nbsp;&nbsp;&nbsp;求解 $ x ^ N $<br>A:&nbsp;&nbsp;&nbsp;O(N)的算法:<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ans = <span class="number">1</span>;    </span><br><span class="line"><span class="keyword">for</span>(i = <span class="number">1</span>; i &lt;= n; i++)&#123;</span><br><span class="line">    ans *= x;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>A:&nbsp;&nbsp;&nbsp;O(logN)的算法:</p>
+<ol>
+<li>将N转换成二进制表示形式 $$ N = 2 ^ {k_{1}} + 2 ^ {k_{2}} + 2 ^ {k_{3}} + …. + 2 ^ {k_{n}}$$</li>
+<li>要求解$x ^ N $,相当与计算$$ x ^ N = x ^ {2 ^ {k_{1}} + 2 ^ {k_{2}} + 2 ^ {k_{3}} + …. + 2 ^ {k_{n}}} = x^{2 ^ {k_{1}}}x^{2 ^ {k_{2}}}x^{2 ^ {k_{3}}}…x^{2 ^ {k_{n}}}$$</li>
+<li>所以只要在依次求$x ^ {2^i} $ 的同时进行计算就好了,最终得到了O(logN)的计算幂运算的算法</li>
+</ol>
+<p><strong>举个例子:计算 $ x ^ {22} $</strong></p>
+<ol>
+<li>十进制下的22的二进制表示 : $ 22_{10} = 10110_{2}$</li>
+<li>$ N = 22 = 2^{4} + 2^{2} + 2^{1}$</li>
+<li>$ x^{22} = x^{2^{4} + 2^{2} + 2^{1}} = x^{16}x^{4}x^{2}$</li>
+<li>可以看到如果是O(N)的算法,当前例子需要计算22次,而O(logN)的算法只需要计算5次</li>
+</ol>
+<p>\begin{array}{|rrrrrrrr|}<br>\hline<br>&amp; \color{red}{CODE:}&amp;<br>\hline<br>\end{array}<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 计算x^n,复杂度O(logN)</span></span><br><span class="line"><span class="function">LL <span class="title">powN</span><span class="params">(LL x, LL n)</span></span>&#123;</span><br><span class="line">    LL r = <span class="number">1</span>; <span class="comment">// 计算结果</span></span><br><span class="line">    <span class="keyword">while</span>(n)&#123;</span><br><span class="line">        <span class="keyword">if</span>(n&amp;<span class="number">1</span>) r *= x; <span class="comment">// 如果n的二进制表示i(i &gt;= 0)的位置是1,则乘上x^(2^i)</span></span><br><span class="line">        x *= x; <span class="comment">// 将x平方</span></span><br><span class="line">        n &gt;&gt;= <span class="number">1</span>; <span class="comment">// 右移一位</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> r; <span class="comment">// 返回结果</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 计算x^n mod p, ( a * b ) % p = ( ( a % p ) * ( b * p ) ) % p 复杂度O(logN)</span></span><br><span class="line"><span class="function">LL <span class="title">mod_powN</span><span class="params">(LL x, LL n, LL p)</span></span>&#123;</span><br><span class="line">    LL r = <span class="number">1</span>; <span class="comment">// 计算结果</span></span><br><span class="line">    <span class="keyword">while</span>(n)&#123;</span><br><span class="line">        <span class="keyword">if</span>(n&amp;<span class="number">1</span>) r = r * x % p; <span class="comment">// 如果n的二进制表示i(i &gt;= 0)的位置是1,则乘上x^(2^i)</span></span><br><span class="line">        x = x * x % p; <span class="comment">// 将x平方</span></span><br><span class="line">        n &gt;&gt;= <span class="number">1</span>; <span class="comment">// 右移一位</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> r; <span class="comment">// 返回结果</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h3 id="3-费马小定理"><a href="#3-费马小定理" class="headerlink" title="3.费马小定理:"></a>3.<a href="https://zh.wikipedia.org/wiki/%E8%B4%B9%E9%A9%AC%E5%B0%8F%E5%AE%9A%E7%90%86" target="_blank" rel="noopener">费马小定理</a>:</h3><p>费马小定理是数论中的一个定理：假如a是一个整数，p是一个质数，那么 $a^{p}-a$是p的倍数，可以表示为<br>$$ a ^ p \equiv a (\mod p) $$<br>如果a不是p的倍数，这个定理也可以写成<br>$$ a ^ {p-1} \equiv 1 (\mod p)$$<br>费马小定理是<a href="https://zh.wikipedia.org/wiki/%E6%AC%A7%E6%8B%89%E5%AE%9A%E7%90%86_%28%E6%95%B0%E8%AE%BA%29" target="_blank" rel="noopener">欧拉定理</a>的一个特殊情况：如果n和a的最大公因数是1，那么<br>$$ a^{φ(n)} \equiv 1 (\mod n) $$<br>这里φ(n)是欧拉函数。欧拉函数的值是所有小于或等于n的正整数中与n互质的数的个数。假如n是一个素数（质数），则φ(n) = n-1，即费马小定理<br><strong>注:</strong> $\equiv$是<a href="https://zh.wikipedia.org/wiki/%E5%90%8C%E9%A4%98" target="_blank" rel="noopener">同余</a>符号 $ a \mod p = b \mod p$ 可表示为 $ a \equiv b (\mod p)$</p>
+<p><strong>推导以下表达式:</strong><br>当p是质数时:<br>$$ a ^ n  \equiv a ^ {(n \mod (p-1))} (\mod p) $$<br>成立</p>
+<p>证:<br>$$ n = k(p-1) + (n \mod (p-1)) (k为整数) $$<br>$$ a ^ n \equiv a ^ {k(p-1) + (n \mod (p-1))} \equiv {a ^ {p-1}} ^ {k} a ^ {(n \mod (p-1))} (\mod p)$$<br>由费马小定理可知:<br>$$ {a ^ {p-1}} ^ {k}  \equiv a ^ {p-1}  \equiv 1(\mod p)$$<br>得证:<br>$$ a ^ n  \equiv a ^ {(n \mod (p-1))} (\mod p) $$</p>
+<hr>
+<h2 id="回到题目"><a href="#回到题目" class="headerlink" title="回到题目:"></a>回到题目:</h2><h3 id="1-分析"><a href="#1-分析" class="headerlink" title="1.分析"></a>1.分析</h3><p>我们注意到虽然题目中的M斐波那契数列和斐波那契数列有异曲同工之处,但是一个计算的是乘法,一个是加法,但加法和乘法之间有着密切的联系.</p>
+<h3 id="2-算一算"><a href="#2-算一算" class="headerlink" title="2.算一算"></a>2.算一算</h3><p>先计算前几项的值:<br>$$ f(0) = a = a ^ 1 <em> b ^ 0 $$<br>$$ f(1) = b = a ^ 0 </em> b ^ 1 $$<br>$$ f(2) = a <em> b = a ^ 1 </em> b ^ 1 $$<br>$$ f(3) = a <em> b </em> b = a ^ 1 <em> b ^ 2 $$<br>$$ f(4) = a </em> a <em> b </em> b <em> b = a ^ 2 </em> b ^ 3 $$<br>$$ f(4) = a <em> a </em> a <em> b </em> b <em> b </em> b <em> b= a ^ 3 </em> b ^ 5 $$<br>$$ ……………………………………………………..$$<br>$$ f(n) = f(n-1)<em>f(n-2) = a ^ x </em> b ^ y $$<br>|n| 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 11 | 12 | 13 | … | … | n-1 | n |<br>|——–| —–:  | :—-:  | :—-:  | :—-:  | :—-:  | :—-:  | :—-:  | :—-:  | :—-:  | :—-:  | :—-:  | :—-:  | :—-:  | :—-:  | :—-:  | :—-:  | :—-:  | :—-:  |<br>|x| 1 | 0 | 1 | 1 | 2 | 3 | 5 | 8 | 13 | 21 | 34 | 55 | 89 | … | … | fib(n-2) | fib(n-1) |<br>|y| 0 | 1 | 1 | 2 | 3 | 5 | 8 | 13 | 21 | 34 | 55 | 89 | 144 | … | … | fib(n-1) | fib(n) |</p>
+<p>不难得出:<br>$$ f(0) = a $$<br>$$ f(1) = b $$<br>$$ f(n) = f(n-1)<em>f(n-2) = a ^ {fib(n-1)} </em> b ^ {fib(n)} (n &gt;= 2) $$</p>
+<p>通过上面费马小定理证明的结论,当p是质数时:<br>$$ a ^ n  \equiv a ^ {(n \mod (p-1))} (\mod p) $$<br>所以我们实际上需要计算的就是下面的表达式(p = 1000000007):<br>$$ f(n) \mod p= f(n-1)<em>f(n-2) \mod p = a ^ {fib(n-1) \mod p-1} </em> b ^ {fib(n) \mod p-1} \mod p(n &gt;= 2) $$</p>
+<p>1.计算类似于计算整数的快速幂算法计算矩阵的幂 $A_{n-1} = A_{0} ^ {n}$<br>$A_{0} = \begin{bmatrix}0 &amp; 1 \1 &amp; 1 \ \end{bmatrix}$ &nbsp;&nbsp; $A_{n-1} = \begin{bmatrix}fib(n-1) &amp; fib(n) \fib(n) &amp; fib(n+1) \ \end{bmatrix} = A_{0} ^ {n}$ </p>
+<p>计算矩阵的幂时,我们实际上需要得到的结果是:<br>$$ A_{n-1} \mod p-1 = \begin{bmatrix}fib(n-1) \mod p-1 &amp; fib(n) \mod p-1 \fib(n) \mod p-1 &amp; fib(n+1) \mod p-1 \ \end{bmatrix} = (A_{0} \mod p-1)  ^ {n} \mod p-1 $$</p>
+<p>如果理解了上面的快速幂算法的话,这实现起来将会非常简单</p>
+<p>2.得到$fib(n-1) \mod p-1$ 和 $fib(n) \mod p-1$ 之后,设这两个数为x,y,用整数的快速幂算法计算:<br>$$a ^ x <em> b^y \mod p = (a ^ x \mod p  </em> b^y \mod p)  \mod p$$</p>
+<p>\begin{array}{|rrrrrrrr|}<br>\hline<br>&amp; \color{red}{CODE:}&amp;<br>\hline<br>\end{array}</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MOD1 = <span class="number">1e9</span>+<span class="number">7</span>; <span class="comment">// p</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MOD2 = <span class="number">1e9</span>+<span class="number">6</span>; <span class="comment">// p-1</span></span><br><span class="line">LL a,b,n;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Matrix</span>&#123;</span> <span class="comment">// 矩阵结构体</span></span><br><span class="line">    LL arr[<span class="number">2</span>][<span class="number">2</span>];</span><br><span class="line">&#125;Matrix;</span><br><span class="line"></span><br><span class="line">Matrix unit = &#123; <span class="comment">// 单位矩阵</span></span><br><span class="line">    <span class="number">1</span>,<span class="number">0</span>,</span><br><span class="line">    <span class="number">0</span>,<span class="number">1</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Matrix A0 = &#123; <span class="comment">// A0矩阵</span></span><br><span class="line">    <span class="number">0</span>,<span class="number">1</span>,</span><br><span class="line">    <span class="number">1</span>,<span class="number">1</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 矩阵a*b</span></span><br><span class="line"><span class="function">Matrix <span class="title">matrixMulti</span><span class="params">(Matrix a, Matrix b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i,j,k;</span><br><span class="line">    Matrix tmp;</span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; <span class="number">2</span>; i++)&#123; </span><br><span class="line">        <span class="keyword">for</span>(j = <span class="number">0</span>; j &lt; <span class="number">2</span>; j++)&#123; </span><br><span class="line">            tmp.arr[i][j] = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span>(k = <span class="number">0</span>; k &lt; <span class="number">2</span>; k++)&#123; </span><br><span class="line">                tmp.arr[i][j] += (a.arr[i][k]*b.arr[k][j])%MOD2;</span><br><span class="line">                tmp.arr[i][j] %= MOD2;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> tmp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 矩阵快速幂,计算的结果对MOD2取余</span></span><br><span class="line"><span class="function">Matrix <span class="title">matrixPow</span><span class="params">(Matrix a, LL n)</span></span>&#123;</span><br><span class="line">    Matrix r = unit, base = a;</span><br><span class="line">    <span class="keyword">while</span>(n)&#123;</span><br><span class="line">        <span class="keyword">if</span>(n&amp;<span class="number">1</span>) r = matrixMulti(r,base);</span><br><span class="line">        base = matrixMulti(base, base);</span><br><span class="line">        n &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> r;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 整数快速幂,计算的结果对MOD1取余</span></span><br><span class="line"><span class="function">LL <span class="title">powN</span><span class="params">(LL a, LL n)</span></span>&#123;</span><br><span class="line">    LL r = <span class="number">1</span>, base = a%MOD1;</span><br><span class="line">    <span class="keyword">while</span>(n)&#123;</span><br><span class="line">        <span class="keyword">if</span>(n&amp;<span class="number">1</span>) r = r*base%MOD1;</span><br><span class="line">        base = base*base%MOD1;</span><br><span class="line">        n &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> r;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="comment">//freopen("in.txt", "r", stdin);</span></span><br><span class="line">    Matrix An_1;</span><br><span class="line">    <span class="keyword">while</span>(~<span class="built_in">scanf</span>(<span class="string">"%lld%lld%lld"</span>, &amp;a, &amp;b, &amp;n))&#123; <span class="comment">// 输入a,b,n</span></span><br><span class="line">        An_1 = matrixPow(A0,n); <span class="comment">// 计算An_1</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>, powN(a, An_1.arr[<span class="number">0</span>][<span class="number">0</span>]) * powN(b, An_1.arr[<span class="number">1</span>][<span class="number">0</span>]) % MOD1);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="思考"><a href="#思考" class="headerlink" title="思考:"></a>思考:</h2><p>Q: 为什么要使用费马小定理?<br>A: 因为 $ x \mod p-1 &lt;= x $ 所以可以减少计算整数幂时候的计算次数,不使用费马小定理会超时.</p>
+<hr>
+<p>作者 <a href="https://xiaohejun.github.io/">@何军</a><br>2018 年 03月 24日    </p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>emm.坚持原创技术分享，您的支持将鼓励我这个小菜鸡的创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="xiaohejun 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/矩阵快速幂/" rel="tag"># 矩阵快速幂</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/17/demo/骰子作画/" rel="next" title="骰子作画">
+                <i class="fa fa-chevron-left"></i> 骰子作画
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/25/ACM题目/题解(XCPC)/2019中国大学生程序设计竞赛（CCPC）---网络选拔赛-1004-path/" rel="prev" title="2019中国大学生程序设计竞赛（CCPC）---网络选拔赛-1004-path">
+                2019中国大学生程序设计竞赛（CCPC）---网络选拔赛-1004-path <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/22583599865.jpg"
+                alt="xiaohejun" />
+            
+              <p class="site-author-name" itemprop="name">xiaohejun</p>
+              <p class="site-description motion-element" itemprop="description">go go go!!!</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">28</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">15</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">33</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Problem-Description"><span class="nav-number">1.</span> <span class="nav-text">Problem Description</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Input"><span class="nav-number">2.</span> <span class="nav-text">Input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Output"><span class="nav-number">3.</span> <span class="nav-text">Output</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample-Input"><span class="nav-number">4.</span> <span class="nav-text">Sample Input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample-Output"><span class="nav-number">5.</span> <span class="nav-text">Sample Output</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#题目解决"><span class="nav-number"></span> <span class="nav-text">题目解决</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目分析"><span class="nav-number">1.</span> <span class="nav-text">题目分析:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#知识点"><span class="nav-number">2.</span> <span class="nav-text">知识点:</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-斐波那契数列的矩阵运算"><span class="nav-number">2.1.</span> <span class="nav-text">1.斐波那契数列的矩阵运算</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-斐波那契数列"><span class="nav-number">2.1.1.</span> <span class="nav-text">1.斐波那契数列</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-将斐波那契数列写到矩阵中"><span class="nav-number">2.1.2.</span> <span class="nav-text">2.将斐波那契数列写到矩阵中</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-考虑按照以下表达式构造n个矩阵"><span class="nav-number">2.1.2.1.</span> <span class="nav-text">1.考虑按照以下表达式构造n个矩阵:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-得到如下矩阵"><span class="nav-number">2.1.2.2.</span> <span class="nav-text">2.得到如下矩阵</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-矩阵乘法运算"><span class="nav-number">2.1.2.3.</span> <span class="nav-text">3.矩阵乘法运算</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-快速幂"><span class="nav-number">2.2.</span> <span class="nav-text">2.快速幂:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-费马小定理"><span class="nav-number">2.3.</span> <span class="nav-text">3.费马小定理:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#回到题目"><span class="nav-number">3.</span> <span class="nav-text">回到题目:</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-分析"><span class="nav-number">3.1.</span> <span class="nav-text">1.分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-算一算"><span class="nav-number">3.2.</span> <span class="nav-text">2.算一算</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思考"><span class="nav-number">4.</span> <span class="nav-text">思考:</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">xiaohejun</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Pisces</a> v6.4.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.4.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.4.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      TeX: {equationNumbers: { autoNumber: "AMS" }}
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
+  
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
