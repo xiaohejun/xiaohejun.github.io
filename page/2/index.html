@@ -1822,191 +1822,6 @@ ps:看了
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://xiaohejun.github.io/2018/03/25/ACM题目/题解(XCPC)/2019中国大学生程序设计竞赛（CCPC）---网络选拔赛-1004-path/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="xiaohejun">
-      <meta itemprop="description" content="go go go!!!">
-      <meta itemprop="image" content="/images/22583599865.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="xiaohejun's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/25/ACM题目/题解(XCPC)/2019中国大学生程序设计竞赛（CCPC）---网络选拔赛-1004-path/" itemprop="url">
-                  2019中国大学生程序设计竞赛（CCPC）---网络选拔赛-1004-path
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-03-24 20:11:59" itemprop="dateCreated datePublished" datetime="2018-03-24T20:11:59Z">2018-03-24</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2020-01-22 06:18:25" itemprop="dateModified" datetime="2020-01-22T06:18:25Z">2020-01-22</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/题解-XCPC/" itemprop="url" rel="index"><span itemprop="name">题解(XCPC)</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          考虑维护按照边权最小的堆，维护结点信息如下:
-12345int u; // 上一个结点int v; // 当前结点LL lst; // 到上一个结点u的距离LL now; // 到当前结点v的距离int id; // 上一个结点u下一次需要扩展的下标
-一开始，先将每个结点从最短的那条边扩展，然后对于每次操作。取队头元素，当前的路径距离就是第$idx$小的路径，用队头元素进行扩展:
-
-从结点$v$最短的一条边扩展
-从结点u的$id$下标编号进行扩展
-
-扩展的时候维护上述信息。
-这种贪心策略就是很对。
-123456789101112131415161718192021222324252627282
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/03/25/ACM题目/题解(XCPC)/2019中国大学生程序设计竞赛（CCPC）---网络选拔赛-1004-path/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://xiaohejun.github.io/2018/03/25/ACM题目/题解(未分类)/M斐波那契数列/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2140,6 +1955,191 @@ Sa
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/03/25/ACM题目/题解(未分类)/M斐波那契数列/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xiaohejun.github.io/2018/03/25/ACM题目/题解(XCPC)/2019中国大学生程序设计竞赛（CCPC）---网络选拔赛-1004-path/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xiaohejun">
+      <meta itemprop="description" content="go go go!!!">
+      <meta itemprop="image" content="/images/22583599865.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xiaohejun's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/25/ACM题目/题解(XCPC)/2019中国大学生程序设计竞赛（CCPC）---网络选拔赛-1004-path/" itemprop="url">
+                  2019中国大学生程序设计竞赛（CCPC）---网络选拔赛-1004-path
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-03-24 20:11:59" itemprop="dateCreated datePublished" datetime="2018-03-24T20:11:59Z">2018-03-24</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2020-01-22 06:18:25" itemprop="dateModified" datetime="2020-01-22T06:18:25Z">2020-01-22</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/题解-XCPC/" itemprop="url" rel="index"><span itemprop="name">题解(XCPC)</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          考虑维护按照边权最小的堆，维护结点信息如下:
+12345int u; // 上一个结点int v; // 当前结点LL lst; // 到上一个结点u的距离LL now; // 到当前结点v的距离int id; // 上一个结点u下一次需要扩展的下标
+一开始，先将每个结点从最短的那条边扩展，然后对于每次操作。取队头元素，当前的路径距离就是第$idx$小的路径，用队头元素进行扩展:
+
+从结点$v$最短的一条边扩展
+从结点u的$id$下标编号进行扩展
+
+扩展的时候维护上述信息。
+这种贪心策略就是很对。
+123456789101112131415161718192021222324252627282
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/03/25/ACM题目/题解(XCPC)/2019中国大学生程序设计竞赛（CCPC）---网络选拔赛-1004-path/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
