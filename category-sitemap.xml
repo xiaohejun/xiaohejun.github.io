@@ -56,13 +56,6 @@
     </url>
 
     <url>
-        <loc>https://xiaohejun.github.io/categories/%E9%A2%98%E8%A7%A3-codeforces/</loc>
-        <lastmod>2020-01-22T06:26:28.847Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://xiaohejun.github.io/categories/%E9%A2%98%E8%A7%A3-atcoder/</loc>
         <lastmod>2020-01-22T06:27:03.930Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -128,6 +121,13 @@
     <url>
         <loc>https://xiaohejun.github.io/categories/ACM%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF%E5%90%88%E9%9B%86/</loc>
         <lastmod>2020-02-02T08:02:58.842Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://xiaohejun.github.io/categories/%E9%A2%98%E8%A7%A3-codeforces/</loc>
+        <lastmod>2020-02-07T07:31:35.812Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
