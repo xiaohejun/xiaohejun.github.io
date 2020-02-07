@@ -108,23 +108,25 @@
 
 
 
-  <meta name="description" content="go go go!!!">
-<meta property="og:type" content="website">
-<meta property="og:title" content="xiaohejun&#39;s blog">
-<meta property="og:url" content="https://xiaohejun.github.io/archives/index.html">
+  <meta name="description" content="题目链接C. Mind Control 题目大意有$n$个人，有$n$个数字组成序列$a$， 你当前站在第$m$个位置，每一次每个人从这$n$个数字的头或者尾拿走一个数字，一开始你可以说服在拿的时候$k$个人拿首还是拿尾，其他人会任意拿，说服那些人拿首还是拿尾要一开始就确定好，中间不能变。最大化通过控制能确定拿到的值 题解注：题解描述下标从1开始，代码中下标从0开始 显然对于后$n-m$个人，他们">
+<meta name="keywords" content="单调队列">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Codeforces_Round_616_(Div_2)_C题">
+<meta property="og:url" content="https://xiaohejun.github.io/2020/02/08/ACM题目/题解(codeforces)/Codeforces_Round_616_(Div_2)_C题/index.html">
 <meta property="og:site_name" content="xiaohejun&#39;s blog">
-<meta property="og:description" content="go go go!!!">
+<meta property="og:description" content="题目链接C. Mind Control 题目大意有$n$个人，有$n$个数字组成序列$a$， 你当前站在第$m$个位置，每一次每个人从这$n$个数字的头或者尾拿走一个数字，一开始你可以说服在拿的时候$k$个人拿首还是拿尾，其他人会任意拿，说服那些人拿首还是拿尾要一开始就确定好，中间不能变。最大化通过控制能确定拿到的值 题解注：题解描述下标从1开始，代码中下标从0开始 显然对于后$n-m$个人，他们">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-02-07T13:28:19.795Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="xiaohejun&#39;s blog">
-<meta name="twitter:description" content="go go go!!!">
+<meta name="twitter:title" content="Codeforces_Round_616_(Div_2)_C题">
+<meta name="twitter:description" content="题目链接C. Mind Control 题目大意有$n$个人，有$n$个数字组成序列$a$， 你当前站在第$m$个位置，每一次每个人从这$n$个数字的头或者尾拿走一个数字，一开始你可以说服在拿的时候$k$个人拿首还是拿尾，其他人会任意拿，说服那些人拿首还是拿尾要一开始就确定好，中间不能变。最大化通过控制能确定拿到的值 题解注：题解描述下标从1开始，代码中下标从0开始 显然对于后$n-m$个人，他们">
 
 
 
 
 
 
-  <link rel="canonical" href="https://xiaohejun.github.io/archives/"/>
+  <link rel="canonical" href="https://xiaohejun.github.io/2020/02/08/ACM题目/题解(codeforces)/Codeforces_Round_616_(Div_2)_C题/"/>
 
 
 
@@ -134,7 +136,7 @@
   };
 </script>
 
-  <title>归档 | xiaohejun's blog</title>
+  <title>Codeforces_Round_616_(Div_2)_C题 | xiaohejun's blog</title>
   
 
 
@@ -191,7 +193,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -264,7 +266,7 @@
         
         
           
-          <li class="menu-item menu-item-archives menu-item-active">
+          <li class="menu-item menu-item-archives">
     <a href="/archives/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
   </li>
@@ -352,461 +354,246 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
 
-      
-      <span class="archive-page-counter">
-        
-        
-         
-        
-        还行! 目前共计 34 篇日志。 继续努力。
-      </span>
-      
+  
 
-      
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xiaohejun.github.io/2020/02/08/ACM题目/题解(codeforces)/Codeforces_Round_616_(Div_2)_C题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xiaohejun">
+      <meta itemprop="description" content="go go go!!!">
+      <meta itemprop="image" content="/images/nanase.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xiaohejun's blog">
+    </span>
+
+    
+      <header class="post-header">
 
         
         
+          <h1 class="post-title" itemprop="name headline">Codeforces_Round_616_(Div_2)_C题
+              
+            
+          </h1>
         
 
-        
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2020-02-07 21:19:00 / 修改时间：13:28:19" itemprop="dateCreated datePublished" datetime="2020-02-07T21:19:00Z">2020-02-07</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2020">2020</h1>
-          </div>
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2020/02/08/ACM题目/题解(codeforces)/Codeforces_Round_616_(Div_2)_C题/" itemprop="url">
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
               
-                <span itemprop="name">Codeforces_Round_616_(Div_2)_C题</span>
+                <span class="post-meta-item-text">分类于</span>
               
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2020-02-07T21:19:00Z"
-              content="2020-02-07" >
-          02-07
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2020/02/03/ACM题目/题解(codeforces)/Educational_Codeforces_Round_81(Rated_for_Div. 2)_D题/" itemprop="url">
               
-                <span itemprop="name">Educational_Codeforces_Round_81(Rated_for_Div. 2)_D题</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/题解-codeforces/" itemprop="url" rel="index"><span itemprop="name">题解(codeforces)</span></a></span>
+
+                
+                
               
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2020-02-02T16:00:00Z"
-              content="2020-02-02" >
-          02-02
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2020/01/23/ACM模板算法合集/KMP算法/" itemprop="url">
-              
-                <span itemprop="name">KMP算法</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2020-01-23T14:43:00Z"
-              content="2020-01-23" >
-          01-23
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2020/01/23/ACM模板算法合集/ACM算法模板合集目录/" itemprop="url">
-              
-                <span itemprop="name">ACM算法模板合集目录</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2020-01-23T14:39:00Z"
-              content="2020-01-23" >
-          01-23
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2020/01/22/我的博客即将同步至腾讯云+社区，邀请大家一同入驻：httpscloud/" itemprop="url">
-              
-                <span itemprop="name">腾讯云社区博客同步声明</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2020-01-22T15:23:59Z"
-              content="2020-01-22" >
-          01-22
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2020/01/22/面经/小黑盒和长亭科技/" itemprop="url">
-              
-                <span itemprop="name">小黑盒和长亭科技面经</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2020-01-22T15:03:59Z"
-              content="2020-01-22" >
-          01-22
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
+            </span>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2019">2019</h1>
-          </div>
-        
-        
 
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/08/10/ACM题目/题解(计蒜客)/银联高校极客挑战赛-复赛-D-多项式/" itemprop="url">
-              
-                <span itemprop="name">银联高校极客挑战赛-复赛-D-多项式</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-08-10T13:10:59Z"
-              content="2019-08-10" >
-          08-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/08/10/ACM题目/题解(计蒜客)/2019-计蒜之道-复赛A--外教-Michale-变身大熊猫(最长上升子序列+树状数组)/" itemprop="url">
-              
-                <span itemprop="name">2019-计蒜之道-复赛A--外教-Michale-变身大熊猫(最长上升子序列+树状数组)</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-08-10T13:10:59Z"
-              content="2019-08-10" >
-          08-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/08/10/随笔/烦躁与不安/" itemprop="url">
-              
-                <span itemprop="name">烦躁与不安</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-08-10T01:45:40Z"
-              content="2019-08-10" >
-          08-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/02/08/ACM题目/题解(codeforces)/Codeforces_Round_616_(Div_2)_C题/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2020/02/08/ACM题目/题解(codeforces)/Codeforces_Round_616_(Div_2)_C题/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
 
-        
+          
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon"
+            >
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/12/05/ACM题目/题解(牛客网)/牛客练习赛32/" itemprop="url">
-              
-                <span itemprop="name">牛客练习赛32</span>
-              
-            </a>
-        
-      </h2>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-12-04T20:51:59Z"
-              content="2018-12-04" >
-          12-04
-        </time>
-      </div>
+          
 
-    </header>
-  </article>
+        </div>
+      </header>
+    
 
-
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
+      
 
+      
+        <h2 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h2><p><a href="https://codeforces.com/contest/1291/problem/C" target="_blank" rel="noopener">C. Mind Control</a></p>
+<h2 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h2><p>有$n$个人，有$n$个数字组成序列$a$， 你当前站在第$m$个位置，每一次每个人从这$n$个数字的头或者尾拿走一个数字，一开始你可以说服在拿的时候$k$个人拿首还是拿尾，其他人会任意拿，说服那些人拿首还是拿尾要一开始就确定好，中间不能变。最大化通过控制能确定拿到的值</p>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>注：题解描述下标从1开始，代码中下标从0开始</p>
+<p>显然对于后$n-m$个人，他们怎么拿对结果都没有影响。那么可以说服的人数$k = min(k, m-1)$，假设说服$x$个人拿首，有$y$个没说服的人拿了首，显然$x \in [0, k]，y \in [0, m-1-k]$，那么容易知道第$m$个人拿的时候，头是$a_{x+y+1}$，因为首拿了$x+y$个，尾是$a_{x+y+1+n-m}$ 因为轮到第$m$个人拿的时候，还有$n-m+1$个数字，那么$z-(x+y+1)+1=n-m+1$，解得$z=x+y+1+n-m$。所以暴力枚举$x$和$y$的值就得到一个$O(n^2)$的算法。最终答案如下</p>
+<p>$$b_i=max(a_{1+i}, a_1+i+(n-m))$$</p>
+<p>$$ans = max_{x \in [0, k]}\lbrace min_{y \in [0, m-1-k]}b_{x+y} \rbrace$$</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># def wrapper(func):</span></span><br><span class="line"><span class="comment">#     def inner():</span></span><br><span class="line"><span class="comment">#         return next(func)</span></span><br><span class="line"><span class="comment">#     return inner</span></span><br><span class="line"><span class="comment"># input = wrapper(open('in.txt'))</span></span><br><span class="line"></span><br><span class="line">T = int(input())</span><br><span class="line"><span class="keyword">for</span> case <span class="keyword">in</span> range(T):    </span><br><span class="line">    n, m, k = map(int, input().strip().split())</span><br><span class="line">    a = list(map(int, input().strip().split()))</span><br><span class="line">    k = min(m<span class="number">-1</span>, k)</span><br><span class="line">    ans = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> x <span class="keyword">in</span> range(k+<span class="number">1</span>):</span><br><span class="line">        res = int(<span class="number">2e9</span>)</span><br><span class="line">        <span class="keyword">for</span> y <span class="keyword">in</span> range(m-k):</span><br><span class="line">            res = min(res, max(a[x+y], a[x+y+n-m]))</span><br><span class="line">        ans = max(ans, res)</span><br><span class="line">    print(ans)</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+<p>令$y’=x+y$，上面的式子可以变化为</p>
+<p>$$ans = max_{x \in [0, k]}\lbrace min_{y’ \in [x, x+m-1-k]}b_{y’} \rbrace$$</p>
+<p>所以上面的式子可以用线段树来计算，复杂度是$O(nlogn)$，由于求区间最小值的时候区间长度是$m-k$不变的，所以还可以用单调队列来做（和LeetCode的这道题目差不多<a href="https://leetcode-cn.com/problems/sliding-window-maximum/" target="_blank" rel="noopener">239. Sliding Window Maximum</a>），复杂度是$O(n)$，下面是单调队列的做法：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># def wrapper(func):</span></span><br><span class="line"><span class="comment">#     def inner():</span></span><br><span class="line"><span class="comment">#         return next(func)</span></span><br><span class="line"><span class="comment">#     return inner</span></span><br><span class="line"><span class="comment"># input = wrapper(open('in.txt'))</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> collections</span><br><span class="line"></span><br><span class="line">T = int(input())</span><br><span class="line"><span class="keyword">for</span> case <span class="keyword">in</span> range(T):    </span><br><span class="line">    n, m, k = map(int, input().strip().split())</span><br><span class="line">    a = list(map(int, input().strip().split()))</span><br><span class="line">    k, b = min(m<span class="number">-1</span>, k), []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(m):</span><br><span class="line">        b.append(max(a[i], a[i+n-m]))</span><br><span class="line">    ans = <span class="number">0</span></span><br><span class="line">    d = collections.deque()</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(m): </span><br><span class="line">        <span class="keyword">while</span> d <span class="keyword">and</span> b[i] &lt;= b[d[<span class="number">-1</span>]]:</span><br><span class="line">            d.pop()</span><br><span class="line">        <span class="keyword">while</span> d <span class="keyword">and</span> (i-d[<span class="number">0</span>]+<span class="number">1</span> &gt; m-k):</span><br><span class="line">            d.popleft()</span><br><span class="line">        d.append(i)</span><br><span class="line">        <span class="keyword">if</span> i &gt;= m-k<span class="number">-1</span>:</span><br><span class="line">            ans = max(ans, b[d[<span class="number">0</span>]])</span><br><span class="line">    print(ans)</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+
+      
     </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>emm.坚持原创技术分享，您的支持将鼓励我这个小菜鸡的创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="xiaohejun 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/单调队列/" rel="tag"># 单调队列</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/02/03/ACM题目/题解(codeforces)/Educational_Codeforces_Round_81(Rated_for_Div. 2)_D题/" rel="next" title="Educational_Codeforces_Round_81(Rated_for_Div. 2)_D题">
+                <i class="fa fa-chevron-left"></i> Educational_Codeforces_Round_81(Rated_for_Div. 2)_D题
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/4/">4</a><a class="extend next" rel="next" href="/archives/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
-  </nav>
+  </article>
 
 
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -827,8 +614,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -1038,6 +834,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目链接"><span class="nav-number">1.</span> <span class="nav-text">题目链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题目大意"><span class="nav-number">2.</span> <span class="nav-text">题目大意</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题解"><span class="nav-number">3.</span> <span class="nav-text">题解</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -1199,6 +1011,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.1"></script>
+
+
 
   
 
@@ -1585,6 +1401,30 @@
   
   
 
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      TeX: {equationNumbers: { autoNumber: "AMS" }}
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
   
 
 
